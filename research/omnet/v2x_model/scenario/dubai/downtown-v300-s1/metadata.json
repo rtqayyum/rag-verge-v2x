@@ -1,0 +1,25 @@
+{
+  "city": "Dubai",
+  "area": "downtown",
+  "osm_bbox_west_south_east_north": [
+    55.27,
+    25.185,
+    55.29,
+    25.205
+  ],
+  "osm_url": "https://overpass-api.de/api/map?bbox=25.185,55.27,25.205,55.29",
+  "vehicles_requested": 300,
+  "vehicles_exported": 300,
+  "sumo_seed": 1,
+  "duration_s": 60,
+  "step_s": 0.5,
+  "sumo_coordinate_boundary_m": [
+    0.0,
+    0.0,
+    2486.93,
+    2980.74
+  ],
+  "network": "dubai/downtown-v300-s1/map.net.xml",
+  "routes": "dubai/downtown-v300-s1/routes.rou.xml",
+  "trace": "dubai/downtown-v300-s1/sumo.movements"
+}

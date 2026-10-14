@@ -1,0 +1,20 @@
+# Local Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# OMNeT++ build products and raw simulator traces
+research/omnet/v2x_model/src/out/
+research/omnet/v2x_model/src/*.dylib
+research/omnet/v2x_model/src/*.so
+research/omnet/v2x_model/src/*.dll
+research/omnet/v2x_model/scenario/results/
+research/omnet/v2x_model/scenario/generated/results/
+research/omnet/v2x_model/scenario/generated/logs/
+research/omnet/v2x_model/scenario/generated/*.sca
+research/omnet/v2x_model/scenario/generated/*.vec
+research/omnet/v2x_model/scenario/generated/*.vci
+research/omnet/v2x_model/logs/
+research/omnet/v2x_model/build.log
+*.log

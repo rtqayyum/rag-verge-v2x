@@ -1,0 +1,5 @@
+<config>
+    <interface among='eNB* eNodeB* enb* *Enb* gNB* gNodeB* gnb* *Gnb* upf* *Upf* mecHost* pgw*' address='10.x.x.x' netmask='255.255.255.0'/>
+    <!-- A /23 supplies 510 usable host addresses for the 300-vehicle sweep. -->
+    <interface hosts='*' address='192.168.x.x' netmask='255.255.254.0'/>
+</config>

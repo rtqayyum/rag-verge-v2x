@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-09 00:24:27.533273 by Eclipse SUMO randomTrips.py v1.28.0
+<configuration>
+    <net-file value="map.net.xml"/>
+    <route-file value="routes.rou.xml"/>
+    <vehicle-class value="passenger"/>
+    <random-departpos value="True"/>
+    <random-arrivalpos value="True"/>
+    <seed value="1"/>
+    <end value="60.0"/>
+    <period value="7.5"/>
+</configuration>
+-->
+
+<!-- generated on 2026-10-09T00:24:27.519479+04:00 by Eclipse SUMO duarouter 1.28.0
+<duarouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="map.net.xml"/>
+        <route-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="routes.rou.xml"/>
+        <alternatives-output value="NUL"/>
+    </output>
+
+    <processing>
+        <routing-threads value="5"/>
+    </processing>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</duarouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="passenger" vClass="passenger"/>
+    <vehicle id="0" type="passenger" depart="0.00" departPos="162.84" arrivalPos="3.36">
+        <route edges="-285704408#4 -285704408#3 285704408#3 285704408#4 285704410#0"/>
+    </vehicle>
+    <vehicle id="1" type="passenger" depart="7.50" departPos="4.40" arrivalPos="5.32">
+        <route edges="-285704410#3"/>
+    </vehicle>
+    <vehicle id="2" type="passenger" depart="15.00" departPos="53.00" arrivalPos="197.35">
+        <route edges="-285704408#3 -285704408#1 -285704408#0"/>
+    </vehicle>
+    <vehicle id="3" type="passenger" depart="22.50" departPos="6.28" arrivalPos="329.04">
+        <route edges="285704408#7 285704408#8 -285704408#8 -285704408#7 -285704408#6 -285704408#5 -285704408#4 -285704408#3 -285704408#1 -285704408#0"/>
+    </vehicle>
+    <vehicle id="4" type="passenger" depart="30.00" departPos="119.36" arrivalPos="0.48">
+        <route edges="-285704408#6 -285704408#5 285704410#0 285704410#1 285704410#2"/>
+    </vehicle>
+    <vehicle id="5" type="passenger" depart="37.50" departPos="569.26" arrivalPos="58.02">
+        <route edges="-207218628 -285704408#4 -285704408#3 -285704408#1 285704408#1"/>
+    </vehicle>
+    <vehicle id="6" type="passenger" depart="45.00" departPos="3.85" arrivalPos="3.68">
+        <route edges="-285704408#6 -285704408#5 285704410#0 285704410#1 285704410#2 -285704410#2"/>
+    </vehicle>
+    <vehicle id="7" type="passenger" depart="52.50" departPos="27.92" arrivalPos="140.37">
+        <route edges="-285704410#1 -285704410#0 207218628"/>
+    </vehicle>
+</routes>

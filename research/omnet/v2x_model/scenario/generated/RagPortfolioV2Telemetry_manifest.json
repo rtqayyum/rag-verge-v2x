@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-10-12T00:26:52.787244+00:00",
+  "studyTag": "RagPortfolioV2Telemetry",
+  "targets": [
+    [
+      75,
+      2,
+      "burst"
+    ],
+    [
+      75,
+      2,
+      "failure"
+    ],
+    [
+      75,
+      6,
+      "burst"
+    ],
+    [
+      75,
+      6,
+      "failure"
+    ],
+    [
+      75,
+      10,
+      "burst"
+    ],
+    [
+      75,
+      10,
+      "failure"
+    ],
+    [
+      150,
+      2,
+      "burst"
+    ],
+    [
+      150,
+      2,
+      "failure"
+    ],
+    [
+      150,
+      6,
+      "burst"
+    ],
+    [
+      150,
+      6,
+      "failure"
+    ],
+    [
+      150,
+      10,
+      "burst"
+    ],
+    [
+      150,
+      10,
+      "failure"
+    ]
+  ],
+  "completed": [
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R2Burst20261011_202134.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R2Failure20261011_202734.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R6Burst20261011_203124.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R6Failure20261011_205325.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R10Burst20261011_210257.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R10Failure20261011_212828.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R2Burst20261011_214109.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R2Failure20261011_215239.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R6Burst20261011_220132.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R6Failure20261011_224255.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R10Burst20261011_230111.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R10Failure20261011_235712.result.json"
+    }
+  ],
+  "trainSeeds": [
+    0,
+    1,
+    2
+  ],
+  "testSeeds": [
+    3,
+    4
+  ]
+}

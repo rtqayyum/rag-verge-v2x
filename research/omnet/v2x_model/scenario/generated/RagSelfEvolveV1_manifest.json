@@ -1,0 +1,140 @@
+{
+  "created_utc": "2026-10-12T12:52:39.658040+00:00",
+  "targets": [
+    [
+      75,
+      2,
+      "burst"
+    ],
+    [
+      75,
+      2,
+      "failure"
+    ],
+    [
+      75,
+      6,
+      "burst"
+    ],
+    [
+      75,
+      6,
+      "failure"
+    ],
+    [
+      75,
+      10,
+      "burst"
+    ],
+    [
+      75,
+      10,
+      "failure"
+    ],
+    [
+      150,
+      2,
+      "burst"
+    ],
+    [
+      150,
+      2,
+      "failure"
+    ],
+    [
+      150,
+      6,
+      "burst"
+    ],
+    [
+      150,
+      6,
+      "failure"
+    ],
+    [
+      150,
+      10,
+      "burst"
+    ],
+    [
+      150,
+      10,
+      "failure"
+    ]
+  ],
+  "completed": [
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V75R2Burst20261012_073811.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V75R2Failure20261012_074225.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V75R6Burst20261012_074504.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V75R6Failure20261012_075800.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V75R10Burst20261012_080351.result.json"
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V75R10Failure20261012_082201.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V150R2Burst20261012_082945.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V150R2Failure20261012_105800.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V150R6Burst20261012_112216.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V150R6Failure20261012_114939.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagSelfEvolveV1V150R10Burst20261012_115957.result.json"
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagSelfEvolveV1V150R10Failure20261012_123602.result.json"
+    }
+  ],
+  "generations": 3
+}

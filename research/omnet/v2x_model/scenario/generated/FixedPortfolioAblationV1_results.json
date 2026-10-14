@@ -1,0 +1,890 @@
+{
+  "created_utc": "2026-10-12T00:59:03.670284+00:00",
+  "sourceManifest": "research/omnet/v2x_model/scenario/generated/RagPortfolioV2Telemetry_manifest.json",
+  "fixedProfile": {
+    "vergeReliabilityTarget": 0.9,
+    "vergeDelayUncertainty": 0.08,
+    "handoverRiskPenalty": 0.2,
+    "failureRiskPenalty": 1.0,
+    "replicationMaxAlternateQueue": 0.35,
+    "ragOverloadQueueThreshold": 0.18
+  },
+  "rows": [
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R2Burst20261011_202134.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R2Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6408.0,
+          "offeredOrdinary": 11676.0,
+          "successCritical": 611.0,
+          "successOrdinary": 1839.0,
+          "lateCritical": 3568.0,
+          "lateOrdinary": 5678.0,
+          "unanswered": 6388.0,
+          "responseCount": 11696.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 17649.0,
+          "totalResponseLatency": 99627.08899999998,
+          "totalObservedQueueDelay": 98017.68204809196,
+          "meanDecisionTimeUs": 66.05860613720051,
+          "criticalCompletionRate": 0.09534956304619226,
+          "meanResponseLatency": 8.518047965116278
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6354.0,
+          "offeredOrdinary": 11730.0,
+          "successCritical": 591.0,
+          "successOrdinary": 1936.0,
+          "lateCritical": 3556.0,
+          "lateOrdinary": 5670.0,
+          "unanswered": 6331.0,
+          "responseCount": 11753.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 17649.0,
+          "totalResponseLatency": 103708.01600000002,
+          "totalObservedQueueDelay": 103110.30209183092,
+          "meanDecisionTimeUs": 64.76981901560417,
+          "criticalCompletionRate": 0.09301227573182247,
+          "meanResponseLatency": 8.82396120139539
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.09418091938900736,
+        "meanResponseLatency": 8.671004583255833,
+        "replicatedTasks": 0.0,
+        "ragOverloadFallbacks": 17649.0,
+        "selectionScore": -0.5994994472714592
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.0,
+        "meanResponseLatency": 0.0,
+        "selectionScore": 0.0
+      }
+    },
+    {
+      "vehicles": 75,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R2Failure20261011_202734.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R2Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 187.0,
+          "offeredCritical": 2162.0,
+          "offeredOrdinary": 3892.0,
+          "successCritical": 1946.0,
+          "successOrdinary": 3452.0,
+          "lateCritical": 6.0,
+          "lateOrdinary": 6.0,
+          "unanswered": 644.0,
+          "responseCount": 5410.0,
+          "replicatedTasks": 48.0,
+          "vergeShieldFallbacks": 284.0,
+          "vergeSafeReplications": 48.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 543.0609999999999,
+          "totalObservedQueueDelay": 213.24065723884206,
+          "meanDecisionTimeUs": 128.19884220619915,
+          "criticalCompletionRate": 0.9000925069380203,
+          "meanResponseLatency": 0.10038096118299444
+        },
+        {
+          "tasksDroppedFailure": 246.0,
+          "offeredCritical": 2109.0,
+          "offeredOrdinary": 3945.0,
+          "successCritical": 1927.0,
+          "successOrdinary": 3594.0,
+          "lateCritical": 0.0,
+          "lateOrdinary": 0.0,
+          "unanswered": 533.0,
+          "responseCount": 5521.0,
+          "replicatedTasks": 59.0,
+          "vergeShieldFallbacks": 262.0,
+          "vergeSafeReplications": 59.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 470.369,
+          "totalObservedQueueDelay": 273.708756334079,
+          "meanDecisionTimeUs": 123.36572468638624,
+          "criticalCompletionRate": 0.9137031768610716,
+          "meanResponseLatency": 0.08519634124252853
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.9068978418995459,
+        "meanResponseLatency": 0.09278865121276149,
+        "replicatedTasks": 53.5,
+        "ragOverloadFallbacks": 0.0,
+        "selectionScore": 0.898939749802525
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.002139524499425227,
+        "meanResponseLatency": 0.026704444508205347,
+        "selectionScore": 8.816893876884002e-05
+      }
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R6Burst20261011_203124.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R6Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6408.0,
+          "offeredOrdinary": 11676.0,
+          "successCritical": 2004.0,
+          "successOrdinary": 4873.0,
+          "lateCritical": 1247.0,
+          "lateOrdinary": 907.0,
+          "unanswered": 9053.0,
+          "responseCount": 9031.0,
+          "replicatedTasks": 151.0,
+          "vergeShieldFallbacks": 1116.0,
+          "vergeSafeReplications": 151.0,
+          "ragOverloadFallbacks": 12228.0,
+          "totalResponseLatency": 17189.006999999998,
+          "totalObservedQueueDelay": 5533.201467808575,
+          "meanDecisionTimeUs": 254.5737664611945,
+          "criticalCompletionRate": 0.31273408239700373,
+          "meanResponseLatency": 1.9033337393422654
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6354.0,
+          "offeredOrdinary": 11730.0,
+          "successCritical": 2075.0,
+          "successOrdinary": 5008.0,
+          "lateCritical": 1063.0,
+          "lateOrdinary": 722.0,
+          "unanswered": 9216.0,
+          "responseCount": 8868.0,
+          "replicatedTasks": 173.0,
+          "vergeShieldFallbacks": 925.0,
+          "vergeSafeReplications": 173.0,
+          "ragOverloadFallbacks": 12301.0,
+          "totalResponseLatency": 11551.808,
+          "totalObservedQueueDelay": 4351.118737297789,
+          "meanDecisionTimeUs": 251.11269058043337,
+          "criticalCompletionRate": 0.3265659427132515,
+          "meanResponseLatency": 1.302639603067208
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.3196500125551276,
+        "meanResponseLatency": 1.6029866712047367,
+        "replicatedTasks": 162.0,
+        "ragOverloadFallbacks": 12264.5,
+        "selectionScore": 0.18979107885874866
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.03185465759868156,
+        "meanResponseLatency": 0.12486890058881084,
+        "selectionScore": 0.022095145551576684
+      }
+    },
+    {
+      "vehicles": 75,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R6Failure20261011_205325.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R6Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 82.0,
+          "offeredCritical": 2162.0,
+          "offeredOrdinary": 3892.0,
+          "successCritical": 1079.0,
+          "successOrdinary": 1937.0,
+          "lateCritical": 51.0,
+          "lateOrdinary": 78.0,
+          "unanswered": 2909.0,
+          "responseCount": 3145.0,
+          "replicatedTasks": 123.0,
+          "vergeShieldFallbacks": 931.0,
+          "vergeSafeReplications": 123.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 2279.484,
+          "totalObservedQueueDelay": 76.77711957275098,
+          "meanDecisionTimeUs": 405.4651115757736,
+          "criticalCompletionRate": 0.49907493061979646,
+          "meanResponseLatency": 0.7247961844197138
+        },
+        {
+          "tasksDroppedFailure": 72.0,
+          "offeredCritical": 2109.0,
+          "offeredOrdinary": 3945.0,
+          "successCritical": 1145.0,
+          "successOrdinary": 2228.0,
+          "lateCritical": 55.0,
+          "lateOrdinary": 52.0,
+          "unanswered": 2574.0,
+          "responseCount": 3480.0,
+          "replicatedTasks": 167.0,
+          "vergeShieldFallbacks": 921.0,
+          "vergeSafeReplications": 167.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 1462.637,
+          "totalObservedQueueDelay": 149.425277087522,
+          "meanDecisionTimeUs": 407.21248202099736,
+          "criticalCompletionRate": 0.5429113323850165,
+          "meanResponseLatency": 0.4202979885057471
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.5209931315024066,
+        "meanResponseLatency": 0.5725470864627304,
+        "replicatedTasks": 145.0,
+        "ragOverloadFallbacks": 0.0,
+        "selectionScore": 0.4737393645853881
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": -0.006591722449359239,
+        "meanResponseLatency": -0.15321488567322505,
+        "selectionScore": 0.004755468404498808
+      }
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R10Burst20261011_210257.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R10Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6408.0,
+          "offeredOrdinary": 11676.0,
+          "successCritical": 1856.0,
+          "successOrdinary": 3487.0,
+          "lateCritical": 577.0,
+          "lateOrdinary": 817.0,
+          "unanswered": 11347.0,
+          "responseCount": 6737.0,
+          "replicatedTasks": 242.0,
+          "vergeShieldFallbacks": 2580.0,
+          "vergeSafeReplications": 242.0,
+          "ragOverloadFallbacks": 5021.0,
+          "totalResponseLatency": 17871.244000000013,
+          "totalObservedQueueDelay": 2437.4401189042205,
+          "meanDecisionTimeUs": 612.1371048565579,
+          "criticalCompletionRate": 0.28963795255930086,
+          "meanResponseLatency": 2.6527006085794884
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 6354.0,
+          "offeredOrdinary": 11730.0,
+          "successCritical": 1738.0,
+          "successOrdinary": 3528.0,
+          "lateCritical": 706.0,
+          "lateOrdinary": 1033.0,
+          "unanswered": 11079.0,
+          "responseCount": 7005.0,
+          "replicatedTasks": 284.0,
+          "vergeShieldFallbacks": 1660.0,
+          "vergeSafeReplications": 284.0,
+          "ragOverloadFallbacks": 8536.0,
+          "totalResponseLatency": 19285.25500000001,
+          "totalObservedQueueDelay": 3997.4463624295176,
+          "meanDecisionTimeUs": 535.3761491179474,
+          "criticalCompletionRate": 0.2735284859930752,
+          "meanResponseLatency": 2.75306995003569
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.281583219276188,
+        "meanResponseLatency": 2.7028852793075893,
+        "replicatedTasks": 263.0,
+        "ragOverloadFallbacks": 6778.5,
+        "selectionScore": 0.06272239693158088
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": -0.004761001651618191,
+        "meanResponseLatency": -0.22011800182591879,
+        "selectionScore": 0.013233438494455296
+      }
+    },
+    {
+      "vehicles": 75,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV75R10Failure20261011_212828.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V75R10Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 23.0,
+          "offeredCritical": 2162.0,
+          "offeredOrdinary": 3892.0,
+          "successCritical": 850.0,
+          "successOrdinary": 1525.0,
+          "lateCritical": 51.0,
+          "lateOrdinary": 84.0,
+          "unanswered": 3544.0,
+          "responseCount": 2510.0,
+          "replicatedTasks": 125.0,
+          "vergeShieldFallbacks": 846.0,
+          "vergeSafeReplications": 125.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 2450.069000000001,
+          "totalObservedQueueDelay": 76.993421513789,
+          "meanDecisionTimeUs": 746.1147623798087,
+          "criticalCompletionRate": 0.393154486586494,
+          "meanResponseLatency": 0.9761231075697214
+        },
+        {
+          "tasksDroppedFailure": 34.0,
+          "offeredCritical": 2109.0,
+          "offeredOrdinary": 3945.0,
+          "successCritical": 807.0,
+          "successOrdinary": 1589.0,
+          "lateCritical": 69.0,
+          "lateOrdinary": 106.0,
+          "unanswered": 3483.0,
+          "responseCount": 2571.0,
+          "replicatedTasks": 186.0,
+          "vergeShieldFallbacks": 875.0,
+          "vergeSafeReplications": 186.0,
+          "ragOverloadFallbacks": 0.0,
+          "totalResponseLatency": 2290.3489999999997,
+          "totalObservedQueueDelay": 74.26629139318601,
+          "meanDecisionTimeUs": 752.8348164956602,
+          "criticalCompletionRate": 0.38264580369843526,
+          "meanResponseLatency": 0.8908397510696227
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.3879001451424646,
+        "meanResponseLatency": 0.933481429319672,
+        "replicatedTasks": 155.5,
+        "ragOverloadFallbacks": 0.0,
+        "selectionScore": 0.3116666307968909
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": -0.007526003046719687,
+        "meanResponseLatency": 0.15560887855816996,
+        "selectionScore": -0.02185971333137332
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R2Burst20261011_214109.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R2Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12337.0,
+          "offeredOrdinary": 22425.0,
+          "successCritical": 270.0,
+          "successOrdinary": 874.0,
+          "lateCritical": 3988.0,
+          "lateOrdinary": 6769.0,
+          "unanswered": 22861.0,
+          "responseCount": 11901.0,
+          "replicatedTasks": 1.0,
+          "vergeShieldFallbacks": 1.0,
+          "vergeSafeReplications": 1.0,
+          "ragOverloadFallbacks": 34356.0,
+          "totalResponseLatency": 202209.87600000005,
+          "totalObservedQueueDelay": 201096.4039518215,
+          "meanDecisionTimeUs": 139.4812386124192,
+          "criticalCompletionRate": 0.021885385425954446,
+          "meanResponseLatency": 16.990998739601718
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12258.0,
+          "offeredOrdinary": 22504.0,
+          "successCritical": 275.0,
+          "successOrdinary": 834.0,
+          "lateCritical": 3950.0,
+          "lateOrdinary": 6875.0,
+          "unanswered": 22828.0,
+          "responseCount": 11934.0,
+          "replicatedTasks": 1.0,
+          "vergeShieldFallbacks": 1.0,
+          "vergeSafeReplications": 1.0,
+          "ragOverloadFallbacks": 34356.0,
+          "totalResponseLatency": 203037.81099999993,
+          "totalObservedQueueDelay": 202313.89349036908,
+          "meanDecisionTimeUs": 140.95911666637187,
+          "criticalCompletionRate": 0.022434328601729482,
+          "meanResponseLatency": 17.013391235126523
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.022159857013841964,
+        "meanResponseLatency": 17.00219498736412,
+        "replicatedTasks": 1.0,
+        "ragOverloadFallbacks": 34356.0,
+        "selectionScore": -0.7778501429861581
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.00020264245764772468,
+        "meanResponseLatency": -0.005697513126072806,
+        "selectionScore": 0.00020264245764778366
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 2,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R2Failure20261011_215239.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R2Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 1058.0,
+          "offeredCritical": 4172.0,
+          "offeredOrdinary": 7466.0,
+          "successCritical": 1006.0,
+          "successOrdinary": 2801.0,
+          "lateCritical": 2240.0,
+          "lateOrdinary": 3032.0,
+          "unanswered": 2559.0,
+          "responseCount": 9079.0,
+          "replicatedTasks": 1.0,
+          "vergeShieldFallbacks": 5.0,
+          "vergeSafeReplications": 1.0,
+          "ragOverloadFallbacks": 10462.0,
+          "totalResponseLatency": 28896.076000000005,
+          "totalObservedQueueDelay": 28169.176351547434,
+          "meanDecisionTimeUs": 153.56291376155195,
+          "criticalCompletionRate": 0.2411313518696069,
+          "meanResponseLatency": 3.182737746447847
+        },
+        {
+          "tasksDroppedFailure": 625.0,
+          "offeredCritical": 4082.0,
+          "offeredOrdinary": 7556.0,
+          "successCritical": 988.0,
+          "successOrdinary": 2890.0,
+          "lateCritical": 2319.0,
+          "lateOrdinary": 3269.0,
+          "unanswered": 2172.0,
+          "responseCount": 9466.0,
+          "replicatedTasks": 1.0,
+          "vergeShieldFallbacks": 3.0,
+          "vergeSafeReplications": 1.0,
+          "ragOverloadFallbacks": 10500.0,
+          "totalResponseLatency": 32344.220999999998,
+          "totalObservedQueueDelay": 31934.772638890903,
+          "meanDecisionTimeUs": 147.63461714892122,
+          "criticalCompletionRate": 0.24203821656050956,
+          "meanResponseLatency": 3.4168836889921823
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.24158478421505825,
+        "meanResponseLatency": 3.299810717720015,
+        "replicatedTasks": 1.0,
+        "ragOverloadFallbacks": 10481.0,
+        "selectionScore": -0.022410073202542947
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.030051489996772762,
+        "meanResponseLatency": -0.734572579755973,
+        "selectionScore": 0.0888072963772506
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R6Burst20261011_220132.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R6Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12337.0,
+          "offeredOrdinary": 22425.0,
+          "successCritical": 576.0,
+          "successOrdinary": 2126.0,
+          "lateCritical": 3372.0,
+          "lateOrdinary": 5159.0,
+          "unanswered": 23529.0,
+          "responseCount": 11233.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 34462.0,
+          "totalResponseLatency": 116428.19499999999,
+          "totalObservedQueueDelay": 111589.78151206436,
+          "meanDecisionTimeUs": 387.53955383668193,
+          "criticalCompletionRate": 0.04668882224203615,
+          "meanResponseLatency": 10.364835306685658
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12258.0,
+          "offeredOrdinary": 22504.0,
+          "successCritical": 645.0,
+          "successOrdinary": 1920.0,
+          "lateCritical": 3477.0,
+          "lateOrdinary": 5371.0,
+          "unanswered": 23349.0,
+          "responseCount": 11413.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 34450.0,
+          "totalResponseLatency": 117733.22700000006,
+          "totalObservedQueueDelay": 113490.28434388322,
+          "meanDecisionTimeUs": 386.2710613189949,
+          "criticalCompletionRate": 0.052618697993147334,
+          "meanResponseLatency": 10.315712520809608
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.04965376011759175,
+        "meanResponseLatency": 10.340273913747634,
+        "replicatedTasks": 0.0,
+        "ragOverloadFallbacks": 34456.0,
+        "selectionScore": -0.7503462398824083
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.00013647369431106504,
+        "meanResponseLatency": -0.5270103674304956,
+        "selectionScore": 0.015075389988940091
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 6,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R6Failure20261011_224255.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R6Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 75.0,
+          "offeredCritical": 4172.0,
+          "offeredOrdinary": 7466.0,
+          "successCritical": 2145.0,
+          "successOrdinary": 3930.0,
+          "lateCritical": 155.0,
+          "lateOrdinary": 82.0,
+          "unanswered": 5326.0,
+          "responseCount": 6312.0,
+          "replicatedTasks": 396.0,
+          "vergeShieldFallbacks": 1762.0,
+          "vergeSafeReplications": 396.0,
+          "ragOverloadFallbacks": 1031.0,
+          "totalResponseLatency": 3087.179,
+          "totalObservedQueueDelay": 617.5350350186969,
+          "meanDecisionTimeUs": 796.6501191627382,
+          "criticalCompletionRate": 0.5141418983700863,
+          "meanResponseLatency": 0.4890967997465146
+        },
+        {
+          "tasksDroppedFailure": 61.0,
+          "offeredCritical": 4082.0,
+          "offeredOrdinary": 7556.0,
+          "successCritical": 2020.0,
+          "successOrdinary": 3874.0,
+          "lateCritical": 125.0,
+          "lateOrdinary": 78.0,
+          "unanswered": 5541.0,
+          "responseCount": 6097.0,
+          "replicatedTasks": 372.0,
+          "vergeShieldFallbacks": 1850.0,
+          "vergeSafeReplications": 372.0,
+          "ragOverloadFallbacks": 825.0,
+          "totalResponseLatency": 2327.6930000000007,
+          "totalObservedQueueDelay": 487.63312715245416,
+          "meanDecisionTimeUs": 785.6255348955267,
+          "criticalCompletionRate": 0.4948554630083293,
+          "meanResponseLatency": 0.3817767754633427
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.5044986806892078,
+        "meanResponseLatency": 0.43543678760492865,
+        "replicatedTasks": 384.0,
+        "ragOverloadFallbacks": 928.0,
+        "selectionScore": 0.4658237376808135
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": -0.0031169510180325544,
+        "meanResponseLatency": -0.009324858248242862,
+        "selectionScore": -0.002325962358173117
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "burst",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R10Burst20261011_230111.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R10Burst.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12337.0,
+          "offeredOrdinary": 22425.0,
+          "successCritical": 1348.0,
+          "successOrdinary": 2666.0,
+          "lateCritical": 1764.0,
+          "lateOrdinary": 2926.0,
+          "unanswered": 26058.0,
+          "responseCount": 8704.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 34184.0,
+          "totalResponseLatency": 70136.17599999999,
+          "totalObservedQueueDelay": 60480.590083343224,
+          "meanDecisionTimeUs": 708.0936185366694,
+          "criticalCompletionRate": 0.10926481316365405,
+          "meanResponseLatency": 8.05792463235294
+        },
+        {
+          "tasksDroppedFailure": 0.0,
+          "offeredCritical": 12258.0,
+          "offeredOrdinary": 22504.0,
+          "successCritical": 1293.0,
+          "successOrdinary": 2576.0,
+          "lateCritical": 1889.0,
+          "lateOrdinary": 3231.0,
+          "unanswered": 25773.0,
+          "responseCount": 8989.0,
+          "replicatedTasks": 0.0,
+          "vergeShieldFallbacks": 0.0,
+          "vergeSafeReplications": 0.0,
+          "ragOverloadFallbacks": 34184.0,
+          "totalResponseLatency": 73086.65100000001,
+          "totalObservedQueueDelay": 67440.24581654213,
+          "meanDecisionTimeUs": 677.9342220559568,
+          "criticalCompletionRate": 0.10548213411649535,
+          "meanResponseLatency": 8.130676493492047
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.1073734736400747,
+        "meanResponseLatency": 8.094300562922493,
+        "replicatedTasks": 0.0,
+        "ragOverloadFallbacks": 34184.0,
+        "selectionScore": -0.5401705713937248
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.002103041213303347,
+        "meanResponseLatency": 0.6882107701104765,
+        "selectionScore": -0.052953820395534756
+      }
+    },
+    {
+      "vehicles": 150,
+      "rsus": 10,
+      "condition": "failure",
+      "result": "scenario/generated/RagPortfolioV2TelemetryV150R10Failure20261011_235712.result.json",
+      "ini": "scenario/generated/FixedPortfolioAblationV1V150R10Failure.ini",
+      "testSeeds": [
+        3,
+        4
+      ],
+      "profile": {
+        "vergeReliabilityTarget": 0.9,
+        "vergeDelayUncertainty": 0.08,
+        "handoverRiskPenalty": 0.2,
+        "failureRiskPenalty": 1.0,
+        "replicationMaxAlternateQueue": 0.35,
+        "ragOverloadQueueThreshold": 0.18
+      },
+      "heldOut": [
+        {
+          "tasksDroppedFailure": 61.0,
+          "offeredCritical": 4172.0,
+          "offeredOrdinary": 7466.0,
+          "successCritical": 1521.0,
+          "successOrdinary": 2841.0,
+          "lateCritical": 178.0,
+          "lateOrdinary": 198.0,
+          "unanswered": 6900.0,
+          "responseCount": 4738.0,
+          "replicatedTasks": 272.0,
+          "vergeShieldFallbacks": 1460.0,
+          "vergeSafeReplications": 272.0,
+          "ragOverloadFallbacks": 998.0,
+          "totalResponseLatency": 6695.575000000001,
+          "totalObservedQueueDelay": 414.40981201530906,
+          "meanDecisionTimeUs": 1461.2370683049962,
+          "criticalCompletionRate": 0.3645733461169703,
+          "meanResponseLatency": 1.4131648374841708
+        },
+        {
+          "tasksDroppedFailure": 81.0,
+          "offeredCritical": 4082.0,
+          "offeredOrdinary": 7556.0,
+          "successCritical": 1555.0,
+          "successOrdinary": 2955.0,
+          "lateCritical": 133.0,
+          "lateOrdinary": 153.0,
+          "unanswered": 6842.0,
+          "responseCount": 4796.0,
+          "replicatedTasks": 266.0,
+          "vergeShieldFallbacks": 1504.0,
+          "vergeSafeReplications": 266.0,
+          "ragOverloadFallbacks": 779.0,
+          "totalResponseLatency": 3945.1829999999995,
+          "totalObservedQueueDelay": 333.54328520564997,
+          "meanDecisionTimeUs": 1424.406980560905,
+          "criticalCompletionRate": 0.3809407153356198,
+          "meanResponseLatency": 0.8225986238532109
+        }
+      ],
+      "heldOutSummary": {
+        "criticalCompletionRate": 0.37275703072629507,
+        "meanResponseLatency": 1.1178817306686908,
+        "replicatedTasks": 269.0,
+        "ragOverloadFallbacks": 888.5,
+        "selectionScore": 0.2806364922727998
+      },
+      "deltaRagMinusFixed": {
+        "criticalCompletionRate": 0.0,
+        "meanResponseLatency": 0.0,
+        "selectionScore": 0.0
+      }
+    }
+  ]
+}

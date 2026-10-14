@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-09T19:38:57.557478+00:00",
+  "study": "Dubai packet-level VERGE-V2X screening",
+  "study_tag": "FinalStaticRadioKpiV1",
+  "area": "downtown",
+  "vehicles": [
+    25,
+    75,
+    150,
+    300
+  ],
+  "rsus": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "network_seeds": 5,
+  "mobility_seed": 1,
+  "conditions": [
+    "nominal",
+    "burst",
+    "failure"
+  ],
+  "total_edge_rate": 320.0,
+  "simulations": 1500,
+  "note": "Fixed aggregate capacity isolates RSU density from MEC capacity."
+}

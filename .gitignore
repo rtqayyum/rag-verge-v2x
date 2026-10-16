@@ -18,3 +18,9 @@ research/omnet/v2x_model/scenario/generated/*.vci
 research/omnet/v2x_model/logs/
 research/omnet/v2x_model/build.log
 *.log
+
+# Private manuscript and editor/export products
+output/
+research/omnet/v2x_model/paper/
+research/omnet/v2x_model/analysis/**/paper_followup.tex
+**/.matplotlib-cache/

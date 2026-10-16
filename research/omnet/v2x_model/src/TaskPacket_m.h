@@ -45,6 +45,12 @@ namespace v2x {
  *     double workUnits;
  *     double queueSeconds;
  *     int responseBytes;
+ *     bool telemetry;
+ *     bool subscribe;
+ *     bool unsubscribe;
+ *     int reportSequence;
+ *     simtime_t reportGeneratedAt;
+ *     simtime_t reportBusyUntil;
  * }
  * </pre>
  */
@@ -61,6 +67,12 @@ class TaskChunk : public ::inet::FieldsChunk
     double workUnits = 0;
     double queueSeconds = 0;
     int responseBytes = 0;
+    bool telemetry = false;
+    bool subscribe = false;
+    bool unsubscribe = false;
+    int reportSequence = 0;
+    ::omnetpp::simtime_t reportGeneratedAt = SIMTIME_ZERO;
+    ::omnetpp::simtime_t reportBusyUntil = SIMTIME_ZERO;
 
   private:
     void copy(const TaskChunk& other);
@@ -106,6 +118,24 @@ class TaskChunk : public ::inet::FieldsChunk
 
     virtual int getResponseBytes() const;
     virtual void setResponseBytes(int responseBytes);
+
+    virtual bool getTelemetry() const;
+    virtual void setTelemetry(bool telemetry);
+
+    virtual bool getSubscribe() const;
+    virtual void setSubscribe(bool subscribe);
+
+    virtual bool getUnsubscribe() const;
+    virtual void setUnsubscribe(bool unsubscribe);
+
+    virtual int getReportSequence() const;
+    virtual void setReportSequence(int reportSequence);
+
+    virtual ::omnetpp::simtime_t getReportGeneratedAt() const;
+    virtual void setReportGeneratedAt(::omnetpp::simtime_t reportGeneratedAt);
+
+    virtual ::omnetpp::simtime_t getReportBusyUntil() const;
+    virtual void setReportBusyUntil(::omnetpp::simtime_t reportBusyUntil);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const TaskChunk& obj) {obj.parsimPack(b);}

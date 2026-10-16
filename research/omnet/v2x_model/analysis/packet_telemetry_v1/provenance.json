@@ -1,0 +1,154 @@
+[
+  {
+    "input": "scenario/generated/StaleGateV2DowntownV75R4_stale_screen_results.json",
+    "fileSha256": "bba2bc5112c19f7cb72f43f3faa921c1658ec879c4a195d46dff15e386b239d9",
+    "rows": 80,
+    "policies": [
+      "AgeAware",
+      "Power2",
+      "StaleLeast"
+    ],
+    "manifest": {
+      "studyTag": "StaleGateV2",
+      "area": "downtown",
+      "vehicles": 75,
+      "rsus": 4,
+      "mobilitySeed": 1,
+      "durationS": 60,
+      "totalEdgeRate": 160.0,
+      "taskIntervalsS": [
+        0.6,
+        0.3
+      ],
+      "reportPeriodsS": [
+        0.1,
+        0.5,
+        1.0
+      ],
+      "networkSeeds": 4,
+      "smoke": false,
+      "iniSha256": "731bf7f3e00a51fbb4a918f42942475ded1d70f1c8e30ce8d49648c6bd430cc6",
+      "sourceSha256": "edd85766812aa280cf8ccdabb2f5319afc669f5d8f8103885c59d39289c7dd0e",
+      "traceSha256": "03a60fc3a10ada8f29720e745be272b1b4768ca15a76eecbbde1e76a8f12b24a",
+      "routesSha256": "2fabe194dd84d3af1b76d64e42e8ad5e4531f4817186da1db8ea62f38014706b",
+      "meanActiveVehicles": 29.583333333333332,
+      "peakActiveVehicles": 50,
+      "description": "Packet-delivered server-state screening; FreshLeast is an unattainable instantaneous-state reference, not an upper bound."
+    }
+  },
+  {
+    "input": "scenario/generated/FreshP2ValidationDowntownV75R4_stale_screen_results.json",
+    "fileSha256": "b02c0b4714f6fcc436b8ac192915e87651710eba367f4c39fd64fb1a0055d686",
+    "rows": 72,
+    "policies": [
+      "AgeAware",
+      "FreshPower2",
+      "Power2",
+      "StaleLeast"
+    ],
+    "manifest": {
+      "studyTag": "FreshP2Validation",
+      "area": "downtown",
+      "vehicles": 75,
+      "rsus": 4,
+      "mobilitySeed": 1,
+      "durationS": 60,
+      "totalEdgeRate": 160.0,
+      "taskIntervalsS": [
+        0.6,
+        0.3
+      ],
+      "reportPeriodsS": [
+        0.5,
+        1.0
+      ],
+      "networkSeeds": 4,
+      "smoke": false,
+      "iniSha256": "b551d72531c0302dfbd7d88b13bd0ee859d80ef53c6ec6a2b92421ed7235dadd",
+      "sourceSha256": "76158854349d64c2e619512b2929aed22fa95ad62d3a6857e5fb512b0f7350be",
+      "traceSha256": "03a60fc3a10ada8f29720e745be272b1b4768ca15a76eecbbde1e76a8f12b24a",
+      "routesSha256": "2fabe194dd84d3af1b76d64e42e8ad5e4531f4817186da1db8ea62f38014706b",
+      "meanActiveVehicles": 29.583333333333332,
+      "peakActiveVehicles": 50,
+      "description": "Packet-delivered server-state screening; FreshLeast is an unattainable instantaneous-state reference, not an upper bound."
+    }
+  },
+  {
+    "input": "scenario/generated/FinalFreshP2V25R4DowntownV25R4_stale_screen_results.json",
+    "fileSha256": "501c4843540248adf748f8480747852e44df45eaecfbc839fe261b40665e964d",
+    "rows": 78,
+    "policies": [
+      "AgeAware",
+      "FreshP2NoCritical",
+      "FreshP2NoFreshness",
+      "FreshPower2",
+      "Power2",
+      "StaleLeast"
+    ],
+    "manifest": {
+      "studyTag": "FinalFreshP2V25R4",
+      "area": "downtown",
+      "vehicles": 25,
+      "rsus": 4,
+      "mobilitySeed": 1,
+      "durationS": 60,
+      "totalEdgeRate": 160.0,
+      "taskIntervalsS": [
+        0.6,
+        0.3
+      ],
+      "reportPeriodsS": [
+        0.5,
+        1.0
+      ],
+      "networkSeeds": 3,
+      "smoke": false,
+      "iniSha256": "704f55e36a6e81c5668e01c37b9e1937cd77a50a22f50635e96682f679b26a43",
+      "sourceSha256": "571671881ff064127c8a6a4fe951599b92e58586464c44f0d8131bd28995fc9e",
+      "traceSha256": "16d63210539b02c46866adf37dfad92c2aa7a45494c90a0234c2b32e95e98833",
+      "routesSha256": "2d1f40aa01dd1b5d6e65171e4d71bcdac282129f2e476fbc20411e700386673d",
+      "meanActiveVehicles": 9.933333333333334,
+      "peakActiveVehicles": 17,
+      "description": "Packet-delivered server-state screening; FreshLeast is an unattainable instantaneous-state reference, not an upper bound."
+    }
+  },
+  {
+    "input": "scenario/generated/FinalFreshP2V150R8DowntownV150R8_stale_screen_results.json",
+    "fileSha256": "d4d36e813205bccff73cfe0b6fefbdb4777203649e46d3fb4f6b9251c9277e98",
+    "rows": 78,
+    "policies": [
+      "AgeAware",
+      "FreshP2NoCritical",
+      "FreshP2NoFreshness",
+      "FreshPower2",
+      "Power2",
+      "StaleLeast"
+    ],
+    "manifest": {
+      "studyTag": "FinalFreshP2V150R8",
+      "area": "downtown",
+      "vehicles": 150,
+      "rsus": 8,
+      "mobilitySeed": 1,
+      "durationS": 60,
+      "totalEdgeRate": 160.0,
+      "taskIntervalsS": [
+        0.6,
+        0.3
+      ],
+      "reportPeriodsS": [
+        0.5,
+        1.0
+      ],
+      "networkSeeds": 3,
+      "smoke": false,
+      "iniSha256": "b1941421e1b921c90540deb58e5c52b5f2552fc0eaabd2f8e2f03fbbd775e65c",
+      "sourceSha256": "571671881ff064127c8a6a4fe951599b92e58586464c44f0d8131bd28995fc9e",
+      "traceSha256": "660543172e8f3e9a1605b5cb07c24d3763fa55c8945df916aae7e03bcd0a88d7",
+      "routesSha256": "5f7246b21c4d2e97afa6648f4e41899aefb91e59640d8815952fe3e8f7fc0d7b",
+      "meanActiveVehicles": 54.608333333333334,
+      "peakActiveVehicles": 94,
+      "description": "Packet-delivered server-state screening; FreshLeast is an unattainable instantaneous-state reference, not an upper bound."
+    }
+  }
+]

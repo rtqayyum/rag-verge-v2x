@@ -208,6 +208,12 @@ void TaskChunk::copy(const TaskChunk& other)
     this->workUnits = other.workUnits;
     this->queueSeconds = other.queueSeconds;
     this->responseBytes = other.responseBytes;
+    this->telemetry = other.telemetry;
+    this->subscribe = other.subscribe;
+    this->unsubscribe = other.unsubscribe;
+    this->reportSequence = other.reportSequence;
+    this->reportGeneratedAt = other.reportGeneratedAt;
+    this->reportBusyUntil = other.reportBusyUntil;
 }
 
 void TaskChunk::parsimPack(omnetpp::cCommBuffer *b) const
@@ -223,6 +229,12 @@ void TaskChunk::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->workUnits);
     doParsimPacking(b,this->queueSeconds);
     doParsimPacking(b,this->responseBytes);
+    doParsimPacking(b,this->telemetry);
+    doParsimPacking(b,this->subscribe);
+    doParsimPacking(b,this->unsubscribe);
+    doParsimPacking(b,this->reportSequence);
+    doParsimPacking(b,this->reportGeneratedAt);
+    doParsimPacking(b,this->reportBusyUntil);
 }
 
 void TaskChunk::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -238,6 +250,12 @@ void TaskChunk::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->workUnits);
     doParsimUnpacking(b,this->queueSeconds);
     doParsimUnpacking(b,this->responseBytes);
+    doParsimUnpacking(b,this->telemetry);
+    doParsimUnpacking(b,this->subscribe);
+    doParsimUnpacking(b,this->unsubscribe);
+    doParsimUnpacking(b,this->reportSequence);
+    doParsimUnpacking(b,this->reportGeneratedAt);
+    doParsimUnpacking(b,this->reportBusyUntil);
 }
 
 int TaskChunk::getTaskId() const
@@ -350,6 +368,72 @@ void TaskChunk::setResponseBytes(int responseBytes)
     this->responseBytes = responseBytes;
 }
 
+bool TaskChunk::getTelemetry() const
+{
+    return this->telemetry;
+}
+
+void TaskChunk::setTelemetry(bool telemetry)
+{
+    handleChange();
+    this->telemetry = telemetry;
+}
+
+bool TaskChunk::getSubscribe() const
+{
+    return this->subscribe;
+}
+
+void TaskChunk::setSubscribe(bool subscribe)
+{
+    handleChange();
+    this->subscribe = subscribe;
+}
+
+bool TaskChunk::getUnsubscribe() const
+{
+    return this->unsubscribe;
+}
+
+void TaskChunk::setUnsubscribe(bool unsubscribe)
+{
+    handleChange();
+    this->unsubscribe = unsubscribe;
+}
+
+int TaskChunk::getReportSequence() const
+{
+    return this->reportSequence;
+}
+
+void TaskChunk::setReportSequence(int reportSequence)
+{
+    handleChange();
+    this->reportSequence = reportSequence;
+}
+
+::omnetpp::simtime_t TaskChunk::getReportGeneratedAt() const
+{
+    return this->reportGeneratedAt;
+}
+
+void TaskChunk::setReportGeneratedAt(::omnetpp::simtime_t reportGeneratedAt)
+{
+    handleChange();
+    this->reportGeneratedAt = reportGeneratedAt;
+}
+
+::omnetpp::simtime_t TaskChunk::getReportBusyUntil() const
+{
+    return this->reportBusyUntil;
+}
+
+void TaskChunk::setReportBusyUntil(::omnetpp::simtime_t reportBusyUntil)
+{
+    handleChange();
+    this->reportBusyUntil = reportBusyUntil;
+}
+
 class TaskChunkDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -365,6 +449,12 @@ class TaskChunkDescriptor : public omnetpp::cClassDescriptor
         FIELD_workUnits,
         FIELD_queueSeconds,
         FIELD_responseBytes,
+        FIELD_telemetry,
+        FIELD_subscribe,
+        FIELD_unsubscribe,
+        FIELD_reportSequence,
+        FIELD_reportGeneratedAt,
+        FIELD_reportBusyUntil,
     };
   public:
     TaskChunkDescriptor();
@@ -446,7 +536,7 @@ void TaskChunkDescriptor::setValueAsString(omnetpp::any_ptr object, const char *
 int TaskChunkDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 10+base->getFieldCount() : 10;
+    return base ? 16+base->getFieldCount() : 16;
 }
 
 unsigned int TaskChunkDescriptor::getFieldTypeFlags(int field) const
@@ -468,8 +558,14 @@ unsigned int TaskChunkDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_workUnits
         FD_ISEDITABLE,    // FIELD_queueSeconds
         FD_ISEDITABLE,    // FIELD_responseBytes
+        FD_ISEDITABLE,    // FIELD_telemetry
+        FD_ISEDITABLE,    // FIELD_subscribe
+        FD_ISEDITABLE,    // FIELD_unsubscribe
+        FD_ISEDITABLE,    // FIELD_reportSequence
+        FD_ISEDITABLE,    // FIELD_reportGeneratedAt
+        FD_ISEDITABLE,    // FIELD_reportBusyUntil
     };
-    return (field >= 0 && field < 10) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 16) ? fieldTypeFlags[field] : 0;
 }
 
 const char *TaskChunkDescriptor::getFieldName(int field) const
@@ -491,8 +587,14 @@ const char *TaskChunkDescriptor::getFieldName(int field) const
         "workUnits",
         "queueSeconds",
         "responseBytes",
+        "telemetry",
+        "subscribe",
+        "unsubscribe",
+        "reportSequence",
+        "reportGeneratedAt",
+        "reportBusyUntil",
     };
-    return (field >= 0 && field < 10) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 16) ? fieldNames[field] : nullptr;
 }
 
 int TaskChunkDescriptor::findField(const char *fieldName) const
@@ -509,6 +611,12 @@ int TaskChunkDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "workUnits") == 0) return baseIndex + 7;
     if (strcmp(fieldName, "queueSeconds") == 0) return baseIndex + 8;
     if (strcmp(fieldName, "responseBytes") == 0) return baseIndex + 9;
+    if (strcmp(fieldName, "telemetry") == 0) return baseIndex + 10;
+    if (strcmp(fieldName, "subscribe") == 0) return baseIndex + 11;
+    if (strcmp(fieldName, "unsubscribe") == 0) return baseIndex + 12;
+    if (strcmp(fieldName, "reportSequence") == 0) return baseIndex + 13;
+    if (strcmp(fieldName, "reportGeneratedAt") == 0) return baseIndex + 14;
+    if (strcmp(fieldName, "reportBusyUntil") == 0) return baseIndex + 15;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -531,8 +639,14 @@ const char *TaskChunkDescriptor::getFieldTypeString(int field) const
         "double",    // FIELD_workUnits
         "double",    // FIELD_queueSeconds
         "int",    // FIELD_responseBytes
+        "bool",    // FIELD_telemetry
+        "bool",    // FIELD_subscribe
+        "bool",    // FIELD_unsubscribe
+        "int",    // FIELD_reportSequence
+        "omnetpp::simtime_t",    // FIELD_reportGeneratedAt
+        "omnetpp::simtime_t",    // FIELD_reportBusyUntil
     };
-    return (field >= 0 && field < 10) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 16) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **TaskChunkDescriptor::getFieldPropertyNames(int field) const
@@ -625,6 +739,12 @@ std::string TaskChunkDescriptor::getFieldValueAsString(omnetpp::any_ptr object, 
         case FIELD_workUnits: return double2string(pp->getWorkUnits());
         case FIELD_queueSeconds: return double2string(pp->getQueueSeconds());
         case FIELD_responseBytes: return long2string(pp->getResponseBytes());
+        case FIELD_telemetry: return bool2string(pp->getTelemetry());
+        case FIELD_subscribe: return bool2string(pp->getSubscribe());
+        case FIELD_unsubscribe: return bool2string(pp->getUnsubscribe());
+        case FIELD_reportSequence: return long2string(pp->getReportSequence());
+        case FIELD_reportGeneratedAt: return simtime2string(pp->getReportGeneratedAt());
+        case FIELD_reportBusyUntil: return simtime2string(pp->getReportBusyUntil());
         default: return "";
     }
 }
@@ -651,6 +771,12 @@ void TaskChunkDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int fie
         case FIELD_workUnits: pp->setWorkUnits(string2double(value)); break;
         case FIELD_queueSeconds: pp->setQueueSeconds(string2double(value)); break;
         case FIELD_responseBytes: pp->setResponseBytes(string2long(value)); break;
+        case FIELD_telemetry: pp->setTelemetry(string2bool(value)); break;
+        case FIELD_subscribe: pp->setSubscribe(string2bool(value)); break;
+        case FIELD_unsubscribe: pp->setUnsubscribe(string2bool(value)); break;
+        case FIELD_reportSequence: pp->setReportSequence(string2long(value)); break;
+        case FIELD_reportGeneratedAt: pp->setReportGeneratedAt(string2simtime(value)); break;
+        case FIELD_reportBusyUntil: pp->setReportBusyUntil(string2simtime(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'TaskChunk'", field);
     }
 }
@@ -675,6 +801,12 @@ omnetpp::cValue TaskChunkDescriptor::getFieldValue(omnetpp::any_ptr object, int 
         case FIELD_workUnits: return pp->getWorkUnits();
         case FIELD_queueSeconds: return pp->getQueueSeconds();
         case FIELD_responseBytes: return pp->getResponseBytes();
+        case FIELD_telemetry: return pp->getTelemetry();
+        case FIELD_subscribe: return pp->getSubscribe();
+        case FIELD_unsubscribe: return pp->getUnsubscribe();
+        case FIELD_reportSequence: return pp->getReportSequence();
+        case FIELD_reportGeneratedAt: return pp->getReportGeneratedAt().dbl();
+        case FIELD_reportBusyUntil: return pp->getReportBusyUntil().dbl();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'TaskChunk' as cValue -- field index out of range?", field);
     }
 }
@@ -701,6 +833,12 @@ void TaskChunkDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int 
         case FIELD_workUnits: pp->setWorkUnits(value.doubleValue()); break;
         case FIELD_queueSeconds: pp->setQueueSeconds(value.doubleValue()); break;
         case FIELD_responseBytes: pp->setResponseBytes(omnetpp::checked_int_cast<int>(value.intValue())); break;
+        case FIELD_telemetry: pp->setTelemetry(value.boolValue()); break;
+        case FIELD_subscribe: pp->setSubscribe(value.boolValue()); break;
+        case FIELD_unsubscribe: pp->setUnsubscribe(value.boolValue()); break;
+        case FIELD_reportSequence: pp->setReportSequence(omnetpp::checked_int_cast<int>(value.intValue())); break;
+        case FIELD_reportGeneratedAt: pp->setReportGeneratedAt(value.doubleValue()); break;
+        case FIELD_reportBusyUntil: pp->setReportBusyUntil(value.doubleValue()); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'TaskChunk'", field);
     }
 }

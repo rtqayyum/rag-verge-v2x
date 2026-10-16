@@ -10,6 +10,22 @@ scheduling is deterministic. The paper and code explicitly report the limits
 of the current evaluation, including the single map, modeled rather than
 validated handover interruption, and small held-out adaptive sample.
 
+## Packet-telemetry follow-up (16 October 2026)
+
+The latest follow-up replaces free server-state access for deployable controls
+with timestamped UDP queue reports and restricts task generation to recorded
+vehicle activity. It adds Power2, age-aware and FreshPower2 dispatch, coefficient
+ablations, four immutable result datasets (308 runs), and seven plot sets.
+FreshPower2 improves the mean over Power2 in nine of twelve cells, but the
+small paired samples do not establish statistical superiority or a separate
+criticality-boost benefit. The planned full scaling matrix is incomplete.
+This follow-up contains fixed policies and makes no additional LLM benefit claim.
+
+See [completed packet-telemetry experiments](research/omnet/v2x_model/PACKET_TELEMETRY_RESULTS.md)
+for design, caveats, replay commands, and [the audited report](research/omnet/v2x_model/analysis/packet_telemetry_v1/REPORT.md)
+for all findings. Run `python3 research/omnet/v2x_model/analyze_packet_telemetry.py`
+to regenerate the tables and PNG/SVG figures from the included compact data.
+
 ## Repository contents
 
 - `research/omnet/v2x_model/src/`: OMNeT++/Simu5G task and edge-server model.

@@ -39,6 +39,13 @@ simple TaskClient like IApp
         // RAG-evolved policy portfolio switches to delay-first dispatch once
         // the mean observed edge queue exceeds this threshold.
         double ragOverloadQueueThreshold @unit(s) = default(0.18s);
+        bool packetTelemetry = default(false);
+        double agePenalty = default(1.0);
+        // FreshPower2 parameters: uncertainty-aware scoring inside a
+        // randomized two-server candidate set.
+        double freshnessPenalty = default(0.35);
+        double freshnessCriticalBoost = default(2.0);
+        int stateSubscriptionBytes @unit(B) = default(64B);
         int requestBytes @unit(B) = default(1200B);
         int responseBytes @unit(B) = default(240B);
         @class(v2x::TaskClient);

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-15 14:59:02.484367 by Eclipse SUMO randomTrips.py v1.28.0
+<configuration>
+    <net-file value="/Users/rana/Documents/llm-v2x-dr-asad/research/omnet/v2x_model/scenario/dubai/downtown-v75-s1-StaleGateV2-d60-dt0p5/map.net.xml"/>
+    <output-trip-file value="/Users/rana/Documents/llm-v2x-dr-asad/research/omnet/v2x_model/scenario/dubai/downtown-v75-s1-StaleGateV2-d60-dt0p5/trips.trips.xml"/>
+    <route-file value="/Users/rana/Documents/llm-v2x-dr-asad/research/omnet/v2x_model/scenario/dubai/downtown-v75-s1-StaleGateV2-d60-dt0p5/routes.rou.xml"/>
+    <vehicle-class value="passenger"/>
+    <random-departpos value="True"/>
+    <random-arrivalpos value="True"/>
+    <seed value="1"/>
+    <end value="60.0"/>
+    <period value="0.8"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="passenger" vClass="passenger"/>
+    <trip id="0" depart="0.00" from="-285704408#4" to="285704410#0" type="passenger" departPos="162.84" arrivalPos="3.36"/>
+    <trip id="1" depart="0.80" from="-285704410#3" to="-285704410#3" type="passenger" departPos="4.40" arrivalPos="5.32"/>
+    <trip id="2" depart="1.60" from="-285704408#3" to="-285704408#0" type="passenger" departPos="53.00" arrivalPos="197.35"/>
+    <trip id="3" depart="2.40" from="285704408#7" to="-285704408#0" type="passenger" departPos="6.28" arrivalPos="329.04"/>
+    <trip id="4" depart="3.20" from="-285704408#6" to="285704410#2" type="passenger" departPos="119.36" arrivalPos="0.48"/>
+    <trip id="5" depart="4.00" from="-207218628" to="285704408#1" type="passenger" departPos="569.26" arrivalPos="58.02"/>
+    <trip id="6" depart="4.80" from="-285704408#6" to="-285704410#2" type="passenger" departPos="3.85" arrivalPos="3.68"/>
+    <trip id="7" depart="5.60" from="-285704410#1" to="207218628" type="passenger" departPos="27.92" arrivalPos="140.37"/>
+    <trip id="8" depart="6.40" from="-285704408#6" to="-285704410#3" type="passenger" departPos="38.37" arrivalPos="0.15"/>
+    <trip id="9" depart="7.20" from="285704408#8" to="285704408#1" type="passenger" departPos="134.46" arrivalPos="28.29"/>
+    <trip id="10" depart="8.00" from="285704410#3" to="285704410#0" type="passenger" departPos="0.82" arrivalPos="4.39"/>
+    <trip id="11" depart="8.80" from="285704408#6" to="285704408#6" type="passenger" departPos="123.99" arrivalPos="55.89"/>
+    <trip id="12" depart="9.60" from="285704408#8" to="285704408#5" type="passenger" departPos="63.51" arrivalPos="26.85"/>
+    <trip id="13" depart="10.40" from="285704410#1" to="285704410#0" type="passenger" departPos="61.15" arrivalPos="7.77"/>
+    <trip id="14" depart="11.20" from="-207218628" to="-285704408#7" type="passenger" departPos="483.34" arrivalPos="5.84"/>
+    <trip id="15" depart="12.00" from="-285704408#5" to="285704408#1" type="passenger" departPos="32.12" arrivalPos="102.65"/>
+    <trip id="16" depart="12.80" from="-285704410#0" to="-285704410#2" type="passenger" departPos="6.71" arrivalPos="12.91"/>
+    <trip id="17" depart="13.60" from="285704408#0" to="-285704410#1" type="passenger" departPos="222.97" arrivalPos="3.54"/>
+    <trip id="18" depart="14.40" from="-285704408#1" to="285704408#6" type="passenger" departPos="149.63" arrivalPos="78.54"/>
+    <trip id="19" depart="15.20" from="-285704410#0" to="-285704408#5" type="passenger" departPos="6.62" arrivalPos="44.87"/>
+    <trip id="20" depart="16.00" from="285704408#7" to="285704408#1" type="passenger" departPos="12.12" arrivalPos="35.33"/>
+    <trip id="21" depart="16.80" from="-285704410#3" to="285704410#2" type="passenger" departPos="3.90" arrivalPos="7.24"/>
+    <trip id="22" depart="17.60" from="-285704408#7" to="285704408#1" type="passenger" departPos="13.49" arrivalPos="0.87"/>
+    <trip id="23" depart="18.40" from="285704408#7" to="285704408#9" type="passenger" departPos="12.49" arrivalPos="237.57"/>
+    <trip id="24" depart="19.20" from="285704408#8" to="207218628" type="passenger" departPos="117.51" arrivalPos="259.06"/>
+    <trip id="25" depart="20.00" from="-285704408#1" to="285704410#0" type="passenger" departPos="86.75" arrivalPos="2.64"/>
+    <trip id="26" depart="20.80" from="-285704410#3" to="207218628" type="passenger" departPos="2.41" arrivalPos="210.42"/>
+    <trip id="27" depart="21.60" from="285704408#0" to="285704408#4" type="passenger" departPos="278.86" arrivalPos="97.50"/>
+    <trip id="28" depart="22.40" from="-207218628" to="-285704408#6" type="passenger" departPos="107.41" arrivalPos="77.39"/>
+    <trip id="29" depart="23.20" from="285704410#0" to="285704408#8" type="passenger" departPos="10.51" arrivalPos="170.91"/>
+    <trip id="30" depart="24.00" from="-285704408#7" to="285704410#0" type="passenger" departPos="9.48" arrivalPos="1.10"/>
+    <trip id="31" depart="24.80" from="-207218628" to="-285704408#0" type="passenger" departPos="457.99" arrivalPos="113.80"/>
+    <trip id="32" depart="25.60" from="-285704408#3" to="285704408#4" type="passenger" departPos="21.84" arrivalPos="14.79"/>
+    <trip id="33" depart="26.40" from="-285704408#4" to="285704408#1" type="passenger" departPos="35.85" arrivalPos="41.53"/>
+    <trip id="34" depart="27.20" from="285704408#5" to="-285704410#3" type="passenger" departPos="14.71" arrivalPos="3.20"/>
+    <trip id="35" depart="28.00" from="-207218628" to="-285704410#1" type="passenger" departPos="255.14" arrivalPos="22.52"/>
+    <trip id="36" depart="28.80" from="-285704408#3" to="285704410#1" type="passenger" departPos="32.35" arrivalPos="25.31"/>
+    <trip id="37" depart="29.60" from="285704408#3" to="285704408#9" type="passenger" departPos="1.31" arrivalPos="5.73"/>
+    <trip id="38" depart="30.40" from="-285704408#4" to="285704408#6" type="passenger" departPos="34.16" arrivalPos="93.30"/>
+    <trip id="39" depart="31.20" from="285704408#4" to="285704408#1" type="passenger" departPos="46.95" arrivalPos="148.48"/>
+    <trip id="40" depart="32.00" from="285704408#7" to="207218628" type="passenger" departPos="3.14" arrivalPos="394.29"/>
+    <trip id="41" depart="32.80" from="-285704410#0" to="285704408#3" type="passenger" departPos="4.24" arrivalPos="39.82"/>
+    <trip id="42" depart="33.60" from="-285704408#1" to="-285704408#8" type="passenger" departPos="147.31" arrivalPos="183.28"/>
+    <trip id="43" depart="34.40" from="-285704408#8" to="285704410#0" type="passenger" departPos="64.97" arrivalPos="12.39"/>
+    <trip id="44" depart="35.20" from="285704408#6" to="-285704410#2" type="passenger" departPos="33.41" arrivalPos="0.14"/>
+    <trip id="45" depart="36.00" from="285704410#0" to="-285704408#0" type="passenger" departPos="10.81" arrivalPos="438.78"/>
+    <trip id="46" depart="36.80" from="285704408#1" to="-285704408#5" type="passenger" departPos="132.07" arrivalPos="44.49"/>
+    <trip id="47" depart="37.60" from="285704408#5" to="207218628" type="passenger" departPos="17.27" arrivalPos="210.93"/>
+    <trip id="48" depart="38.40" from="-285704408#6" to="285704408#5" type="passenger" departPos="57.33" arrivalPos="8.87"/>
+    <trip id="49" depart="39.20" from="-285704408#3" to="285704408#5" type="passenger" departPos="18.77" arrivalPos="22.84"/>
+    <trip id="50" depart="40.00" from="-285704408#9" to="285704410#0" type="passenger" departPos="286.39" arrivalPos="0.24"/>
+    <trip id="51" depart="40.80" from="-285704408#6" to="-285704410#0" type="passenger" departPos="130.70" arrivalPos="10.32"/>
+    <trip id="52" depart="41.60" from="-285704408#9" to="-285704408#6" type="passenger" departPos="214.69" arrivalPos="110.92"/>
+    <trip id="53" depart="42.40" from="285704410#2" to="-285704410#0" type="passenger" departPos="13.91" arrivalPos="9.06"/>
+    <trip id="54" depart="43.20" from="-285704410#3" to="285704410#3" type="passenger" departPos="1.58" arrivalPos="4.90"/>
+    <trip id="55" depart="44.00" from="-285704408#3" to="-285704408#5" type="passenger" departPos="57.77" arrivalPos="9.73"/>
+    <trip id="56" depart="44.80" from="285704408#6" to="285704408#4" type="passenger" departPos="111.37" arrivalPos="78.34"/>
+    <trip id="57" depart="45.60" from="-285704408#9" to="-285704408#8" type="passenger" departPos="276.12" arrivalPos="126.44"/>
+    <trip id="58" depart="46.40" from="285704410#2" to="285704410#1" type="passenger" departPos="2.13" arrivalPos="66.71"/>
+    <trip id="59" depart="47.20" from="-285704408#3" to="-285704408#0" type="passenger" departPos="4.64" arrivalPos="394.99"/>
+    <trip id="60" depart="48.00" from="285704408#7" to="285704408#9" type="passenger" departPos="4.80" arrivalPos="197.36"/>
+    <trip id="61" depart="48.80" from="285704408#7" to="-285704410#1" type="passenger" departPos="8.04" arrivalPos="26.80"/>
+    <trip id="62" depart="49.60" from="-285704408#3" to="-285704408#7" type="passenger" departPos="56.48" arrivalPos="7.95"/>
+    <trip id="63" depart="50.40" from="285704410#2" to="-285704410#3" type="passenger" departPos="4.37" arrivalPos="5.31"/>
+    <trip id="64" depart="51.20" from="285704408#8" to="-285704408#0" type="passenger" departPos="140.34" arrivalPos="41.81"/>
+    <trip id="65" depart="52.00" from="-285704408#3" to="285704410#1" type="passenger" departPos="2.54" arrivalPos="29.00"/>
+    <trip id="66" depart="52.80" from="285704410#3" to="-285704410#2" type="passenger" departPos="0.78" arrivalPos="2.78"/>
+    <trip id="67" depart="53.60" from="-285704408#7" to="285704408#7" type="passenger" departPos="1.45" arrivalPos="12.83"/>
+    <trip id="68" depart="54.40" from="-285704410#0" to="285704410#3" type="passenger" departPos="11.99" arrivalPos="1.98"/>
+    <trip id="69" depart="55.20" from="-285704408#7" to="-285704410#3" type="passenger" departPos="1.41" arrivalPos="4.40"/>
+    <trip id="70" depart="56.00" from="-207218628" to="-285704408#0" type="passenger" departPos="595.58" arrivalPos="134.78"/>
+    <trip id="71" depart="56.80" from="285704408#1" to="-285704410#3" type="passenger" departPos="47.68" arrivalPos="0.43"/>
+    <trip id="72" depart="57.60" from="285704410#1" to="285704410#3" type="passenger" departPos="117.37" arrivalPos="0.75"/>
+    <trip id="73" depart="58.40" from="-285704408#6" to="285704408#4" type="passenger" departPos="129.76" arrivalPos="115.54"/>
+    <trip id="74" depart="59.20" from="285704408#5" to="285704408#5" type="passenger" departPos="11.84" arrivalPos="24.75"/>
+    <trip id="75" depart="60.00" from="-285704408#8" to="-285704408#7" type="passenger" departPos="17.03" arrivalPos="3.96"/>
+</routes>

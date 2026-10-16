@@ -15,4 +15,10 @@ class TaskChunk extends inet::FieldsChunk
     double workUnits;
     double queueSeconds;
     int responseBytes;
+    bool telemetry;
+    bool subscribe;
+    bool unsubscribe;
+    int reportSequence;
+    simtime_t reportGeneratedAt;
+    simtime_t reportBusyUntil;
 }

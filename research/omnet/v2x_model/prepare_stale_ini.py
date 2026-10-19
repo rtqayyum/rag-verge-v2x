@@ -85,7 +85,7 @@ def prepare(scenario: Path, rsus: int, total_edge_rate: float, name: str,
     content = content[:base_stop] + content[base_stop:].replace(old_stop, "".join(stops), 1)
     scalars = (
         "offeredCritical", "offeredOrdinary", "totalOfferedWorkUnits",
-        "successCritical", "successOrdinary",
+        "successCritical", "successOrdinary", "rejectedCritical", "rejectedOrdinary",
         "lateCritical", "lateOrdinary", "unanswered", "responseCount",
         "totalResponseLatency", "meanDecisionTimeUs", "stateReportsReceived",
         "stateReportsOutOfOrder", "stateDecisionsWithReport",
@@ -93,8 +93,9 @@ def prepare(scenario: Path, rsus: int, total_edge_rate: float, name: str,
         "stateSubscriptionBytesSent", "meanStateAgeAtDecision",
     )
     server_scalars = (
-        "tasksReceived", "tasksDroppedFailure", "resultsSent", "totalQueueDelay",
-        "serviceWorkUnits", "stateReportsSent", "stateBytesSent",
+        "tasksReceived", "tasksDroppedFailure", "tasksRejectedDeadline", "resultsSent",
+        "totalQueueDelay", "offeredWorkUnits", "serviceWorkUnits", "admittedWorkUnits",
+        "stateReportsSent", "stateBytesSent",
         "stateSubscriptionsReceived",
     )
     additions = [
@@ -102,7 +103,9 @@ def prepare(scenario: Path, rsus: int, total_edge_rate: float, name: str,
         *initial_cells,
         "*.ue[*].app[0].packetTelemetry = true\n",
         "*.edge[*].app[0].packetTelemetry = true\n",
-        "*.ue[*].app[0].rng-1 = 0\n",
+        # Keep randomized server sampling on RNG 1 so it cannot perturb the
+        # paired task criticality/work stream on RNG 0.
+        "*.ue[*].app[0].rng-1 = 1\n",
         "*.ue[*].app[0].stateAgeAtDecision.vector-recording = true\n",
         f"# Vehicles capable of generating at least one task: {active_clients}\n",
     ]

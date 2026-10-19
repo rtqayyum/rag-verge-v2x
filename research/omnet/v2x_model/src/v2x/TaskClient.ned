@@ -41,6 +41,8 @@ simple TaskClient like IApp
         double ragOverloadQueueThreshold @unit(s) = default(0.18s);
         bool packetTelemetry = default(false);
         double agePenalty = default(1.0);
+        double missingReportCost @unit(s) = default(1s);
+        int candidateSampleSize = default(2);
         // FreshPower2 parameters: uncertainty-aware scoring inside a
         // randomized two-server candidate set.
         double freshnessPenalty = default(0.35);

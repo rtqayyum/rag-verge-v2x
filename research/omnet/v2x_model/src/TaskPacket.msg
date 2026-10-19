@@ -9,6 +9,7 @@ class TaskChunk extends inet::FieldsChunk
     int clientId;
     int serverId;
     bool response;
+    bool rejected;
     bool critical;
     simtime_t createdAt;
     simtime_t deadlineAt;

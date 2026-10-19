@@ -109,6 +109,33 @@ The fixed telemetry portfolio and multi-generation reflection have separate
 runners and separately saved results. They are ablations, not evidence that
 LLM-guided search consistently outperforms conventional policy tuning.
 
+## Integrated packet campaign
+
+The integrated runner is the main attribution experiment. It uses the same
+timestamped UDP reports, deadline admission, task accounting, random seeds,
+and simulator for ReportedEarliest, Power2, DahlinAge, OracleDiagnostic,
+RAG-VERGE, no-retrieval LLM, random search, and the kernel-surrogate control.
+The included two-seed held-out pilot is under
+`scenario/generated/IntegratedPacketV1HeldoutV75R4_results.json`; it records
+the local Ollama proposal, retrieved memory, verified profile, source hash,
+and every KPI. In this pilot RAG-VERGE is lower than Power2, so the artifact
+does not claim a generic RAG gain.
+
+Run a fresh multi-seed campaign with a distinct tag:
+
+```sh
+.venv/bin/python research/omnet/v2x_model/run_integrated_campaign.py \
+  --stage all --study-tag IntegratedPacketV2 \
+  --scenario research/omnet/v2x_model/scenario/dubai/downtown-v75-s1-StaleGateV2-d60-dt0p5 \
+  --rsus 4 --loads 0.8 1.1 --reports 0.5 1.0 \
+  --train-seeds 0 1 2 --test-seeds 3 4 \
+  --provider ollama --model llama3.1:8b
+```
+
+The runner checkpoints after every simulation and never overwrites a changed
+INI or result manifest. The optional `analyze_integrated_campaign.py` script
+creates per-KPI CSV/PDF/PNG summaries from one held-out manifest.
+
 ## Data and interpretation
 
 The final static data are stored in `research/omnet/v2x_model/scenario/generated/`

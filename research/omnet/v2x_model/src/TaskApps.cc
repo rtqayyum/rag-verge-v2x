@@ -63,6 +63,7 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
     int offeredCritical = 0, offeredOrdinary = 0;
     double totalOfferedWorkUnits = 0.0;
     int successCritical = 0, successOrdinary = 0;
+    int rejectedCritical = 0, rejectedOrdinary = 0;
     int lateCritical = 0, lateOrdinary = 0;
     int crossedCell = 0, responses = 0, replicatedTasks = 0;
     int vergeShieldFallbacks = 0, vergeSafeReplications = 0, ragOverloadFallbacks = 0;
@@ -165,7 +166,7 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
 
     double stateQueueDelay(int server, bool ageAware) const {
         if (stateSequence[server] < 0)
-            return ageAware ? 1.0 : 0.0;
+            return par("missingReportCost").doubleValue();
         double remaining = std::max(0.0, (stateBusyUntil[server] - simTime()).dbl());
         double age = std::max(0.0, (simTime() - stateGeneratedAt[server]).dbl());
         return remaining + (ageAware ? par("agePenalty").doubleValue() *
@@ -190,30 +191,40 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
         int cell = currentCell();
         std::string policy = par("policy").stdstringValue();
         if (policy == "staleleast" || policy == "power2" || policy == "ageaware" ||
-            policy == "freshpower2" ||
+            policy == "freshpower2" || policy == "ragvergepacket" ||
             policy == "oracleleast") {
             if (!par("packetTelemetry").boolValue() && policy != "oracleleast")
                 throw cRuntimeError("Policy %s requires packetTelemetry=true", policy.c_str());
-            int first = 0, second = par("numServers").intValue();
-            if (policy == "power2" || policy == "freshpower2") {
-                first = intuniform(0, par("numServers").intValue() - 1, 1);
-                second = intuniform(0, par("numServers").intValue() - 2, 1);
-                if (second >= first) ++second;
+            std::vector<bool> candidate(par("numServers").intValue(), true);
+            if (policy == "power2" || policy == "freshpower2" || policy == "ragvergepacket") {
+                int requested = policy == "ragvergepacket" ?
+                    par("candidateSampleSize").intValue() : 2;
+                int count = std::max(2, std::min(requested,
+                    static_cast<int>(par("numServers").intValue())));
+                std::fill(candidate.begin(), candidate.end(), false);
+                for (int selectedCount = 0; selectedCount < count;) {
+                    int sampled = intuniform(0, par("numServers").intValue() - 1, 1);
+                    if (!candidate[sampled]) {
+                        candidate[sampled] = true;
+                        ++selectedCount;
+                    }
+                }
             }
             int best = -1;
             double bestScore = 1e99;
             for (int j = 0; j < par("numServers").intValue(); ++j) {
-                if ((policy == "power2" || policy == "freshpower2") &&
-                    j != first && j != second) continue;
+                if (!candidate[j]) continue;
                 // All MEC hosts use the same routed UPF path in this topology;
                 // do not add an unmeasured cross-cell backhaul cost.
                 double queue = policy == "oracleleast" ? advertisedQueueDelay(j) :
-                    stateQueueDelay(j, policy == "ageaware" || policy == "freshpower2");
+                    stateQueueDelay(j, policy == "ageaware" || policy == "freshpower2" ||
+                                       policy == "ragvergepacket");
                 // FreshPower2 preserves power-of-two diversification while
                 // charging a criticality-weighted uncertainty cost for stale
                 // telemetry. The age term is only applied inside the sampled
                 // set, so the policy retains the load-balancing benefit of d=2.
-                if (policy == "freshpower2" && stateSequence[j] >= 0) {
+                if ((policy == "freshpower2" || policy == "ragvergepacket") &&
+                    stateSequence[j] >= 0) {
                     double age = std::max(0.0, (simTime() - stateGeneratedAt[j]).dbl());
                     double boost = critical ? par("freshnessCriticalBoost").doubleValue() : 1.0;
                     queue += par("freshnessPenalty").doubleValue() * boost *
@@ -277,6 +288,7 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
         header->setClientId(getParentModule()->getIndex());
         header->setServerId(server);
         header->setResponse(false);
+        header->setRejected(false);
         header->setTelemetry(false);
         header->setCritical(critical);
         header->setCreatedAt(simTime());
@@ -453,6 +465,12 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
         auto it = outstanding.find(header->getTaskId());
         if (header->getResponse() && it != outstanding.end()) {
             SentTask task = it->second;
+            if (header->getRejected()) {
+                if (task.critical) ++rejectedCritical; else ++rejectedOrdinary;
+                outstanding.erase(it);
+                delete packet;
+                return;
+            }
             bool crossedBoundary = currentCell() != task.cellAtSend;
             double interruption = crossedBoundary ? par("handoverInterruption").doubleValue() : 0.0;
             double latency = (simTime() - task.createdAt).dbl() + interruption;
@@ -491,6 +509,8 @@ class TaskClient : public cSimpleModule, public UdpSocket::ICallback {
         recordScalar("totalOfferedWorkUnits", totalOfferedWorkUnits);
         recordScalar("successCritical", successCritical);
         recordScalar("successOrdinary", successOrdinary);
+        recordScalar("rejectedCritical", rejectedCritical);
+        recordScalar("rejectedOrdinary", rejectedOrdinary);
         recordScalar("lateCritical", lateCritical);
         recordScalar("lateOrdinary", lateOrdinary);
         recordScalar("unanswered", outstanding.size());
@@ -553,8 +573,29 @@ class TaskServer : public cSimpleModule, public UdpSocket::ICallback {
     int reportSequence = 0, stateReportsSent = 0;
     int stateSubscriptionsReceived = 0;
     long long stateBytesSent = 0;
-    int received = 0, droppedDuringFailure = 0, sent = 0;
-    double totalWorkReceived = 0.0, totalQueueDelay = 0.0, maxQueueDelay = 0.0;
+    int received = 0, droppedDuringFailure = 0, deadlineRejected = 0, sent = 0;
+    double totalWorkReceived = 0.0, totalWorkAdmitted = 0.0;
+    double totalQueueDelay = 0.0, maxQueueDelay = 0.0;
+
+    void sendRejection(const Ptr<const TaskChunk>& request, const L3Address& destination, int port) {
+        auto header = makeShared<TaskChunk>();
+        header->setTaskId(request->getTaskId());
+        header->setClientId(request->getClientId());
+        header->setServerId(request->getServerId());
+        header->setResponse(true);
+        header->setRejected(true);
+        header->setTelemetry(false);
+        header->setCritical(request->getCritical());
+        header->setCreatedAt(request->getCreatedAt());
+        header->setDeadlineAt(request->getDeadlineAt());
+        header->setWorkUnits(request->getWorkUnits());
+        header->setQueueSeconds(std::max(0.0, (freeAt - simTime()).dbl()));
+        header->setResponseBytes(request->getResponseBytes());
+        header->setChunkLength(B(request->getResponseBytes()));
+        auto *packet = new Packet("deadline-rejection");
+        packet->insertAtBack(header);
+        socket.sendTo(packet, destination, port);
+    }
 
     void sendStateReport(const L3Address& destination, int port) {
         auto header = makeShared<TaskChunk>();
@@ -603,6 +644,7 @@ class TaskServer : public cSimpleModule, public UdpSocket::ICallback {
         header->setClientId(data->clientId);
         header->setServerId(data->serverId);
         header->setResponse(true);
+        header->setRejected(false);
         header->setTelemetry(false);
         header->setCritical(data->critical);
         header->setCreatedAt(data->createdAt);
@@ -645,8 +687,16 @@ class TaskServer : public cSimpleModule, public UdpSocket::ICallback {
             else {
                 simtime_t start = std::max(simTime(), freeAt);
                 simtime_t finishAt = start + header->getWorkUnits() / par("workRate").doubleValue();
+                if (par("deadlineAdmission").boolValue() && finishAt > header->getDeadlineAt()) {
+                    ++deadlineRejected;
+                    sendRejection(header, packet->getTag<L3AddressInd>()->getSrcAddress(),
+                                  packet->getTag<L4PortInd>()->getSrcPort());
+                    delete packet;
+                    return;
+                }
                 freeAt = finishAt;
                 advertisedEdgeFreeAt[getParentModule()->getIndex()] = freeAt;
+                totalWorkAdmitted += header->getWorkUnits();
                 double queueDelay = (start - simTime()).dbl();
                 totalQueueDelay += queueDelay;
                 maxQueueDelay = std::max(maxQueueDelay, queueDelay);
@@ -669,11 +719,14 @@ class TaskServer : public cSimpleModule, public UdpSocket::ICallback {
     void finish() override {
         recordScalar("tasksReceived", received);
         recordScalar("tasksDroppedFailure", droppedDuringFailure);
+        recordScalar("tasksRejectedDeadline", deadlineRejected);
         recordScalar("resultsSent", sent);
         recordScalar("meanQueueDelay", sent ? totalQueueDelay / sent : 0.0);
         recordScalar("totalQueueDelay", totalQueueDelay);
         recordScalar("maxQueueDelay", maxQueueDelay);
-        recordScalar("serviceWorkUnits", totalWorkReceived);
+        recordScalar("offeredWorkUnits", totalWorkReceived);
+        recordScalar("serviceWorkUnits", totalWorkAdmitted);
+        recordScalar("admittedWorkUnits", totalWorkAdmitted);
         recordScalar("estimatedBusyFraction", std::min(1.0,
             totalWorkReceived / par("workRate").doubleValue() / simTime().dbl()));
         recordScalar("stateReportsSent", stateReportsSent);

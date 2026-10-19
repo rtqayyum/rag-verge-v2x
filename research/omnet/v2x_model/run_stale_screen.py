@@ -27,15 +27,17 @@ from prepare_stale_ini import POLICIES, label_ms, prepare
 HERE = Path(__file__).resolve().parent
 UE_METRICS = {
     "offeredCritical", "offeredOrdinary", "totalOfferedWorkUnits",
-    "successCritical", "successOrdinary", "lateCritical", "lateOrdinary",
+    "successCritical", "successOrdinary", "rejectedCritical", "rejectedOrdinary",
+    "lateCritical", "lateOrdinary",
     "unanswered", "responseCount", "totalResponseLatency", "stateReportsReceived",
     "stateReportsOutOfOrder", "stateDecisionsWithReport",
     "stateDecisionsWithoutReport", "stateSubscriptionsSent", "stateBytesReceived",
     "stateSubscriptionBytesSent",
 }
 EDGE_METRICS = {
-    "tasksReceived", "tasksDroppedFailure", "resultsSent", "serviceWorkUnits",
-    "totalQueueDelay", "stateReportsSent", "stateBytesSent",
+    "tasksReceived", "tasksDroppedFailure", "tasksRejectedDeadline", "resultsSent",
+    "offeredWorkUnits", "serviceWorkUnits", "admittedWorkUnits", "totalQueueDelay",
+    "stateReportsSent", "stateBytesSent",
     "stateSubscriptionsReceived",
 }
 
@@ -303,6 +305,7 @@ def main() -> None:
         metrics.update(vector_metrics(vector))
         offered = metrics["offeredCritical"] + metrics["offeredOrdinary"]
         outcomes = (metrics["successCritical"] + metrics["successOrdinary"] +
+                    metrics["rejectedCritical"] + metrics["rejectedOrdinary"] +
                     metrics["lateCritical"] + metrics["lateOrdinary"] + metrics["unanswered"])
         if not math.isclose(offered, outcomes, abs_tol=.1):
             raise RuntimeError(f"Task outcome accounting failed for {config} seed {seed}: "

@@ -29,8 +29,8 @@ def main() -> None:
         "criticalRejectionRate": "Critical rejection",
         "responseCoverage": "Response coverage",
         "meanResponseLatencyS": "Mean response latency (s)",
-        "meanStateAgeS": "Mean report age (s)",
-        "signalingBytesPerS": "Signaling payload (B/s)",
+        "meanStateAgeAtDecisionS": "Mean report age (s)",
+        "signalingPayloadBytesPerS": "Signaling payload (B/s)",
         "admittedWorkUnits": "Admitted work",
         "offeredWorkUnits": "Offered work",
     }
